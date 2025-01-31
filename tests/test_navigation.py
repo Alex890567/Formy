@@ -18,3 +18,7 @@ class TestNavigation:
     def test_navigation_to_datepicker(self, navigation_page):
         testing_element = navigation_page.go_to_datepicker()
         assert testing_element == "https://formy-project.herokuapp.com/datepicker"
+
+    def test_navigation_to_drag_and_drop(self, navigation_page):
+        testing_element = navigation_page.go_to_drag_and_drop()
+        assert testing_element == "https://formy-project.herokuapp.com/dragdrop"
