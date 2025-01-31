@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
+
 class NavigationPage:
     def __init__(self, driver):
         self.driver = driver
@@ -10,6 +11,7 @@ class NavigationPage:
         self.Datepicker = (By.XPATH, "//a[@class='btn btn-lg' and @href='/datepicker']")
         self.Drag_and_Drop = (By.XPATH, "//a[@class='btn btn-lg' and @href='/dragdrop']")
         self.Enabled_and_Disabled_Elements = (By.XPATH, "//a[@class='btn btn-lg' and @href='/enabled']")
+        self.File_Upload = (By.XPATH, "//a[@class='btn btn-lg' and @href='/fileupload']")
 
     def go_to_autocomplete(self):
         element = self.driver.find_element(*self.Autocomplete)
@@ -38,5 +40,10 @@ class NavigationPage:
 
     def go_to_enabled_and_disabled_elements(self):
         element = self.driver.find_element(*self.Enabled_and_Disabled_Elements)
+        element.click()
+        return self.driver.current_url
+
+    def go_to_file_upload(self):
+        element = self.driver.find_element(*self.File_Upload)
         element.click()
         return self.driver.current_url
