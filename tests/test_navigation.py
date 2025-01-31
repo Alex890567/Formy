@@ -22,3 +22,7 @@ class TestNavigation:
     def test_navigation_to_drag_and_drop(self, navigation_page):
         testing_element = navigation_page.go_to_drag_and_drop()
         assert testing_element == "https://formy-project.herokuapp.com/dragdrop"
+
+    def test_navigation_to_enabled_and_disabled_elements(self, navigation_page):
+        testing_element = navigation_page.go_to_enabled_and_disabled_elements()
+        assert testing_element == "https://formy-project.herokuapp.com/enabled"
