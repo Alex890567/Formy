@@ -10,3 +10,7 @@ class TestNavigation:
     def test_navigation_to_buttons(self, navigation_page):
         testing_element = navigation_page.go_to_buttons()
         assert testing_element == "https://formy-project.herokuapp.com/buttons"
+
+    def test_navigation_to_checkbox(self, navigation_page):
+        testing_element = navigation_page.go_to_checkbox()
+        assert testing_element == "https://formy-project.herokuapp.com/checkbox"

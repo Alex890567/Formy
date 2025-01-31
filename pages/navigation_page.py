@@ -6,6 +6,7 @@ class NavigationPage:
         self.driver = driver
         self.Autocomplete = (By.XPATH, "//a[@class='btn btn-lg' and @href='/autocomplete']")
         self.Buttons = (By.XPATH, "//a[@class='btn btn-lg' and @href='/buttons']")
+        self.Checkbox = (By.XPATH, "//a[@class='btn btn-lg' and @href='/checkbox']")
 
 
     def go_to_autocomplete(self):
@@ -15,5 +16,10 @@ class NavigationPage:
 
     def go_to_buttons(self):
         element = self.driver.find_element(*self.Buttons)
+        element.click()
+        return self.driver.current_url
+
+    def go_to_checkbox(self):
+        element = self.driver.find_element(*self.Checkbox)
         element.click()
         return self.driver.current_url
