@@ -14,3 +14,7 @@ class TestNavigation:
     def test_navigation_to_checkbox(self, navigation_page):
         testing_element = navigation_page.go_to_checkbox()
         assert testing_element == "https://formy-project.herokuapp.com/checkbox"
+
+    def test_navigation_to_datepicker(self, navigation_page):
+        testing_element = navigation_page.go_to_datepicker()
+        assert testing_element == "https://formy-project.herokuapp.com/datepicker"

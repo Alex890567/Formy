@@ -14,7 +14,6 @@ def driver():
     driver.quit()
 
 
-
 @pytest.fixture
 def navigation_page(driver):
     return NavigationPage(driver)
