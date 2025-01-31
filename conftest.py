@@ -1,21 +1,19 @@
 import pytest
-from selenium import webdriver
-from selenium.webdriver.edge.service import Service as EdgeService
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from pages.driver_page import get_driver
 
 from pages.navigation_page import NavigationPage
 
 
 @pytest.fixture
 def driver():
-    # Set up the Edge WebDriver
-    service = EdgeService(EdgeChromiumDriverManager().install())
-    options = webdriver.EdgeOptions()
-    options.add_argument("--headless")
-    driver = webdriver.Edge(service=service, options=options)
+    # Modify the browser here if needed
+    browser = "edge"
+    driver = get_driver(browser)
     driver.get("https://formy-project.herokuapp.com/")
     yield driver
     driver.quit()
+
+
 
 @pytest.fixture
 def navigation_page(driver):
