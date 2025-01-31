@@ -12,6 +12,7 @@ class NavigationPage:
         self.Drag_and_Drop = (By.XPATH, "//a[@class='btn btn-lg' and @href='/dragdrop']")
         self.Enabled_and_Disabled_Elements = (By.XPATH, "//a[@class='btn btn-lg' and @href='/enabled']")
         self.File_Upload = (By.XPATH, "//a[@class='btn btn-lg' and @href='/fileupload']")
+        self.Key_and_Mouse_Press = (By.XPATH, "//a[@class='btn btn-lg' and @href='/keypress']")
 
     def go_to_autocomplete(self):
         element = self.driver.find_element(*self.Autocomplete)
@@ -45,5 +46,10 @@ class NavigationPage:
 
     def go_to_file_upload(self):
         element = self.driver.find_element(*self.File_Upload)
+        element.click()
+        return self.driver.current_url
+
+    def go_to_key_and_mouse_press(self):
+        element = self.driver.find_element(*self.Key_and_Mouse_Press)
         element.click()
         return self.driver.current_url

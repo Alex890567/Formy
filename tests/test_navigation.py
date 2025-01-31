@@ -30,3 +30,7 @@ class TestNavigation:
     def test_navigation_to_file_upload(self, navigation_page):
         testing_element = navigation_page.go_to_file_upload()
         assert testing_element == "https://formy-project.herokuapp.com/fileupload"
+
+    def test_navigation_to_key_and_mouse_press(self, navigation_page):
+        testing_element = navigation_page.go_to_key_and_mouse_press()
+        assert testing_element == "https://formy-project.herokuapp.com/keypress"
