@@ -74,3 +74,9 @@ class TestNavigation:
     def test_navigation_to_switch_window(self, navigation_page):
         testing_element = navigation_page.go_to_switch_window()
         assert testing_element == "https://formy-project.herokuapp.com/switch-window"
+
+    @pytest.mark.navigation
+    @pytest.mark.complete_web_form
+    def test_navigation_to_complete_web_element(self, navigation_page):
+        testing_element = navigation_page.go_to_complete_web_form()
+        assert testing_element == "https://formy-project.herokuapp.com/form"
