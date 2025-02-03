@@ -68,3 +68,9 @@ class TestNavigation:
     def test_navigation_to_radio_button(self, navigation_page):
         testing_element = navigation_page.go_to_radio_button()
         assert testing_element == "https://formy-project.herokuapp.com/radiobutton"
+
+    @pytest.mark.navigation
+    @pytest.mark.switch_window
+    def test_navigation_to_switch_window(self, navigation_page):
+        testing_element = navigation_page.go_to_switch_window()
+        assert testing_element == "https://formy-project.herokuapp.com/switch-window"
