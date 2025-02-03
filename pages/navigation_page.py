@@ -15,6 +15,7 @@ class NavigationPage:
         self.Key_and_Mouse_Press = (By.XPATH, "//a[@class='btn btn-lg' and @href='/keypress']")
         self.Modal = (By.XPATH, "//a[@class='btn btn-lg' and @href='/modal']")
         self.Page_Scroll = (By.XPATH, "//a[@class='btn btn-lg' and @href='/scroll']")
+        self.Radio_Button = (By.XPATH, "//a[@class='btn btn-lg' and @href='/radiobutton']")
 
     def go_to_autocomplete(self):
         element = self.driver.find_element(*self.Autocomplete)
@@ -65,5 +66,10 @@ class NavigationPage:
 
     def go_to_page_scroll(self):
         element = self.driver.find_element(*self.Page_Scroll)
+        element.click()
+        return self.driver.current_url
+
+    def go_to_radio_button(self):
+        element = self.driver.find_element(*self.Radio_Button)
         element.click()
         return self.driver.current_url

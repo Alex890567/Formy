@@ -62,3 +62,9 @@ class TestNavigation:
     def test_navigation_to_page_scroll(self, navigation_page):
         testing_element = navigation_page.go_to_page_scroll()
         assert testing_element == "https://formy-project.herokuapp.com/scroll"
+
+    @pytest.mark.navigation
+    @pytest.mark.radio_button
+    def test_navigation_to_radio_button(self, navigation_page):
+        testing_element = navigation_page.go_to_radio_button()
+        assert testing_element == "https://formy-project.herokuapp.com/radiobutton"
