@@ -18,3 +18,7 @@ class TestAutocomplete:
     def test_send_keys_to_state(self, autocomplete_page):
         testing_element = autocomplete_page.send_keys_to_state()
         assert testing_element == "Texas"
+
+    def test_send_keys_to_zip_code(self, autocomplete_page):
+        testing_element = autocomplete_page.send_keys_to_zip_code()
+        assert testing_element == "1234"

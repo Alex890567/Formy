@@ -14,6 +14,7 @@ class AutocompletePage:
         self.Street_Address_2 = (By.ID, "route")
         self.City = (By.ID, "locality")
         self.State = (By.ID, "administrative_area_level_1")
+        self.Zip_Code = (By.ID, "postal_code")
 
 
     def send_keys_to_address(self):
@@ -44,4 +45,10 @@ class AutocompletePage:
         self.Navigation_Page.go_to_autocomplete()
         element = self.wait.until(EC.presence_of_element_located(self.State))
         element.send_keys("Texas")
+        return element.get_attribute("value")
+
+    def send_keys_to_zip_code(self):
+        self.Navigation_Page.go_to_autocomplete()
+        element = self.wait.until(EC.presence_of_element_located(self.Zip_Code))
+        element.send_keys("1234")
         return element.get_attribute("value")
