@@ -14,3 +14,7 @@ class TestAutocomplete:
     def test_send_keys_to_city(self, autocomplete_page):
         testing_element = autocomplete_page.send_keys_to_city()
         assert testing_element == "Houston"
+
+    def test_send_keys_to_state(self, autocomplete_page):
+        testing_element = autocomplete_page.send_keys_to_state()
+        assert testing_element == "Texas"
