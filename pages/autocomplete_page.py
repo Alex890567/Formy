@@ -12,6 +12,7 @@ class AutocompletePage:
         self.Address = (By.ID, "autocomplete")
         self.Street_Address = (By.ID, "street_number")
         self.Street_Address_2 = (By.ID, "route")
+        self.City = (By.ID, "locality")
 
 
     def send_keys_to_address(self):
@@ -30,4 +31,10 @@ class AutocompletePage:
         self.Navigation_Page.go_to_autocomplete()
         element = self.wait.until(EC.presence_of_element_located(self.Street_Address_2))
         element.send_keys("Plain View 20")
+        return element.get_attribute("value")
+
+    def send_keys_to_city(self):
+        self.Navigation_Page.go_to_autocomplete()
+        element = self.wait.until(EC.presence_of_element_located(self.City))
+        element.send_keys("Houston")
         return element.get_attribute("value")

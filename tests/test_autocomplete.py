@@ -10,3 +10,7 @@ class TestAutocomplete:
     def test_send_keys_to_street_address_2(self, autocomplete_page):
         testing_element = autocomplete_page.send_keys_to_street_address_2()
         assert testing_element == "Plain View 20"
+
+    def test_send_keys_to_city(self, autocomplete_page):
+        testing_element = autocomplete_page.send_keys_to_city()
+        assert testing_element == "Houston"
