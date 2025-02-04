@@ -11,6 +11,7 @@ class AutocompletePage:
         self.wait = WebDriverWait(self.driver, 10)
         self.Address = (By.ID, "autocomplete")
         self.Street_Address = (By.ID, "street_number")
+        self.Street_Address_2 = (By.ID, "route")
 
 
     def send_keys_to_address(self):
@@ -23,4 +24,10 @@ class AutocompletePage:
         self.Navigation_Page.go_to_autocomplete()
         element = self.wait.until(EC.presence_of_element_located(self.Street_Address))
         element.send_keys("Mountain View 23")
+        return element.get_attribute("value")
+
+    def send_keys_to_street_address_2(self):
+        self.Navigation_Page.go_to_autocomplete()
+        element = self.wait.until(EC.presence_of_element_located(self.Street_Address_2))
+        element.send_keys("Plain View 20")
         return element.get_attribute("value")
