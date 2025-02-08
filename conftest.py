@@ -1,6 +1,7 @@
 import pytest
 
 from pages.autocomplete_page import AutocompletePage
+from pages.buttons_page import ButtonsPage
 from pages.driver_page import get_driver
 
 from pages.navigation_page import NavigationPage
@@ -23,4 +24,8 @@ def navigation_page(driver):
 @pytest.fixture
 def autocomplete_page(driver, navigation_page):
     return AutocompletePage(driver, navigation_page)
+
+@pytest.fixture
+def buttons_page(driver,navigation_page):
+    return ButtonsPage(driver, navigation_page)
 
