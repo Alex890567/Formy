@@ -9,6 +9,7 @@ class ButtonsPage:
         self.Navigation_page = navigation_page
         self.wait = WebDriverWait(self.driver, 10)
         self.Primary = (By.XPATH, "(//button[@class='btn btn-lg btn-primary'])[1]")
+        self.Success = (By.XPATH, "//button[@class='btn btn-lg btn-success']")
 
 
     def click_primary_button(self):
@@ -16,3 +17,11 @@ class ButtonsPage:
         element = self.wait.until(EC.presence_of_element_located(self.Primary))
         element.click()
         return element
+
+    def click_success_button(self):
+        self.Navigation_page.go_to_buttons()
+        element = self.wait.until(EC.presence_of_element_located(self.Success))
+        element.click()
+        return element
+
+
