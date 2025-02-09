@@ -22,3 +22,7 @@ class TestButtons:
     def test_click_link_button(self, buttons_page):
         testing_element = buttons_page.click_link_button()
         assert testing_element.is_enabled()
+
+    def test_click_left_button(self, buttons_page):
+        testing_element = buttons_page.click_left_button()
+        assert testing_element.is_enabled()
