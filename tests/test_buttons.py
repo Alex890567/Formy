@@ -38,3 +38,7 @@ class TestButtons:
     def test_click_1_button(self, buttons_page):
         testing_element = buttons_page.click_1_button()
         assert testing_element.is_enabled()
+
+    def test_click_2_button(self, buttons_page):
+        testing_element = buttons_page.click_2_button()
+        assert testing_element.is_enabled()
