@@ -11,6 +11,7 @@ class ButtonsPage:
         self.Primary = (By.XPATH, "(//button[@class='btn btn-lg btn-primary'])[1]")
         self.Success = (By.XPATH, "//button[@class='btn btn-lg btn-success']")
         self.Info = (By.XPATH, "//button[@class='btn btn-lg btn-info']")
+        self.Warning = (By.XPATH, "//button[@class='btn btn-lg btn-warning']")
 
 
     def click_primary_button(self):
@@ -28,6 +29,12 @@ class ButtonsPage:
     def click_info_button(self):
         self.Navigation_page.go_to_buttons()
         element = self.wait.until(EC.presence_of_element_located(self.Info))
+        element.click()
+        return element
+
+    def click_warning_button(self):
+        self.Navigation_page.go_to_buttons()
+        element = self.wait.until(EC.presence_of_element_located(self.Warning))
         element.click()
         return element
 
