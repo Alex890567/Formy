@@ -15,7 +15,7 @@ class ButtonsPage:
         self.Danger = (By.XPATH, "//button[@class='btn btn-lg btn-danger']")
         self.Link = (By.XPATH, "//button[@class='btn btn-lg btn-link']")
         self.Left = (By.XPATH, "(//button[@class='btn btn-lg btn-primary'])[2]")
-
+        self.Middle = (By.XPATH, "(//button[@class='btn btn-lg btn-primary'])[3]")
 
     def click_primary_button(self):
         self.Navigation_page.go_to_buttons()
@@ -56,6 +56,12 @@ class ButtonsPage:
     def click_left_button(self):
         self.Navigation_page.go_to_buttons()
         element = self.wait.until(EC.presence_of_element_located(self.Left))
+        element.click()
+        return element
+
+    def click_middle_button(self):
+        self.Navigation_page.go_to_buttons()
+        element = self.wait.until(EC.presence_of_element_located(self.Middle))
         element.click()
         return element
 
